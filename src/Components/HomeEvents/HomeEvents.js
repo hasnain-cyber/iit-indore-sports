@@ -18,7 +18,7 @@ function HomeEvents() {
             }))
         }
         fetchEvents().catch(err => console.log(err))
-    }, [])
+    }, [firestore])
 
     const settings = {
         dots: true,
