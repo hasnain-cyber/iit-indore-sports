@@ -27,6 +27,7 @@ function HomeSports() {
     return (
         <div id='homeSportsReturnWrapper'>
             <h1>Sports</h1>
+            {/*div for grid layout*/}
             <div>
                 {sportComponents}
             </div>
