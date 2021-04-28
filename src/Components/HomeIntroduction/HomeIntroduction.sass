@@ -1,21 +1,31 @@
 #homeIntroductionReturnWrapper
   text-align: center
+  border-radius: 0 0 10px 10px
   color: white
 
   display: flex
   flex-direction: column
   justify-content: center
-  height: 90vh
+  height: 85vh
 
   background: url(homeIntroBackground.jpg) no-repeat
   background-size: cover
 
 #homeIntroductionReturnWrapper h1, p
   margin: 5vh auto
+  width: clamp(50vw, 500px, 80vw)
 
 #homeIntroductionReturnWrapper h1
   font-size: 3em
+  font-family: 'Zen Dots', cursive
 
 #homeIntroductionReturnWrapper p
-  font-size: 1.5em
-  max-width: 40vw
+  font-family: 'Karantina', cursive
+  font-size: 2.5em
+
+@media (max-width: 500px)
+  #homeIntroductionReturnWrapper h1
+    font-size: 2.5em
+
+  #homeIntroductionReturnWrapper p
+    font-size: 2em

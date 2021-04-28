@@ -9,12 +9,10 @@ function Navbar() {
                 <img className="logo" src={'/logo.png'} alt="logo"/>
             </Link>
             <div>
-                <Link className="link" to="/council">
-                    <span>COUNCIL</span>
-                </Link>
-                <Link className="link" to="/hallOfFame">
-                    <span>HALL OF FAME</span>
-                </Link>
+                <div id='navbarButtonWrapper'>
+                    <button><b>COUNCIL</b></button>
+                    <button><b>HALL OF FAME</b></button>
+                </div>
             </div>
         </nav>
     )

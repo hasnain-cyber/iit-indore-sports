@@ -54,6 +54,7 @@ class HomeSportsAnnouncements extends React.Component {
     render() {
         return (
             <div id='homeSportsReturnWrapper'>
+                <h1>ANNOUNCEMENTS</h1>
                 <div className="horizontal-sport">
                     <img id='cricket' className='sport-icon' src={'/Home-Sports-Icons/cricket.svg'}
                          onClick={this.handleImageClick} alt=''/>

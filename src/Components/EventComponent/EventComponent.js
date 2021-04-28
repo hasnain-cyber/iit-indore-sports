@@ -6,8 +6,8 @@ function EventComponent(props) {
         <div id='eventComponentReturnWrapper'>
             <h1>EVENTS</h1>
             <img src={props.doc.data().imageUrl} alt=""/>
-            <h2>{props.doc.data().title}</h2>
-            <p>{props.doc.data().description}</p>
+            <h1>{props.doc.data().title.toUpperCase()}</h1>
+            <p>{props.doc.data().description.toUpperCase()}</p>
         </div>
     )
 }

@@ -1,38 +1,49 @@
+@import "src/index"
+
 #homeSportsReturnWrapper
+  background: $tertiaryColor
   padding: 7vh 2vw
+  text-align: center
+  border-radius: 10px
+
+#homeSportsReturnWrapper h1
+  font-family: 'Zen Dots', cursive
 
 .sport-icon
-  width: 6vh
-  height: 6vh
-  padding: 1vh
+  width: 32px
+  height: 32px
+  padding: 5px
 
-  background: #bff6bf
-  border: 2px solid #bff6bf
+  border: 2px solid black
   border-radius: 10px
+  transition: all ease 0.2s
 
 .sport-icon:hover
   cursor: pointer
-  border-color: black
+  background: $highlightColor
+  width: 50px
+  height: 50px
 
 .horizontal-sport
   display: flex
   justify-content: center
   gap: 3vw
-  padding: 5vh
+  margin: 8vh 0 4vh 0
 
 #sportAnnouncements
   width: 70vw
-  height: 60vh
-  padding: 15px
+  height: 50vh
+  padding: 0 3vw
   margin: 0 auto
   border: 2px solid black
-  border-radius: 20px
+  border-radius: 10px
   overflow-y: scroll
 
 #sportAnnouncements h1
-  text-align: center
+  margin-bottom: 5vh
 
 .announcementHeader
-  background: #9f9d9d
+  background: $highlightColor
   border-radius: 10px
-  padding: 10px
+  padding: 3vh 5vw
+  transform: skew(10deg)
