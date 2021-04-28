@@ -25,6 +25,10 @@ class HomeSportsAnnouncements extends React.Component {
                             )
                     }
                 )
+                const selectedIcon = document.getElementById(this.state.selectedSport)
+                selectedIcon.style.width = '50px'
+                selectedIcon.style.height = '50px'
+                selectedIcon.style.background = '#a9cec2'
             })
             .catch(err => console.log(err))
 
@@ -36,6 +40,17 @@ class HomeSportsAnnouncements extends React.Component {
     }
 
     handleImageClick(event) {
+
+        let selectedIcon = document.getElementById(this.state.selectedSport)
+        selectedIcon.style.width = '32px'
+        selectedIcon.style.height = '32px'
+        selectedIcon.style.background = 'transparent'
+
+        selectedIcon = event.target
+        selectedIcon.style.width = '50px'
+        selectedIcon.style.height = '50px'
+        selectedIcon.style.background = '#a9cec2'
+
         this.setState({
                 selectedSport: event.target.id,
                 announcements:
@@ -77,7 +92,7 @@ class HomeSportsAnnouncements extends React.Component {
                     <img id='gym' className='sport-icon' src={'/Home-Sports-Icons/gym.svg'}
                          onClick={this.handleImageClick}
                          alt=''/>
-                    <img id='tt' className='sport-icon' src={'/Home-Sports-Icons/tt.svg'}
+                    <img id='table tennis' className='sport-icon' src={'/Home-Sports-Icons/tt.svg'}
                          onClick={this.handleImageClick}
                          alt=''/>
                     <img id='tennis' className='sport-icon' src={'/Home-Sports-Icons/tennis.svg'}

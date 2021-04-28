@@ -5,7 +5,7 @@
   justify-content: space-between
   padding: 2vh 4vw
   border-radius: 10px 10px 0 0
-  background: $secondaryColor
+  background: $tertiaryColor
 
 #navbar div
   display: flex
@@ -22,27 +22,17 @@
   gap: 5vw
 
 #navbarButtonWrapper button
-  position: relative
   width: 120px
   height: 40px
   margin: auto auto
-  background: $highlightColor
+  background: transparent
   border-radius: 5px
+  transition: all ease 0.2s
 
-#navbarButtonWrapper button::after
-  position: absolute
-  bottom: 0
-  left: 0
-  content: ''
-  border-radius: 0 0 5px 5px
-  height: 5px
-  width: 100%
-  transform: scale(0, 1)
-  transition: all ease 0.3s
-
-#navbarButtonWrapper button:hover::after
-  background: $highlightSecondaryColor
-  transform: scale(1, 1)
+#navbarButtonWrapper button:hover
+  cursor: pointer
+  box-shadow: 5px 5px
+  background: white
 
 @media (max-width: 500px)
   #navbarButtonWrapper button

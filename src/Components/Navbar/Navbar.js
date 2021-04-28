@@ -3,6 +3,7 @@ import './Navbar.sass'
 import {Link} from 'react-router-dom'
 
 function Navbar() {
+
     return (
         <nav id="navbar">
             <Link to='/'>
@@ -10,8 +11,12 @@ function Navbar() {
             </Link>
             <div>
                 <div id='navbarButtonWrapper'>
-                    <button><b>COUNCIL</b></button>
-                    <button><b>HALL OF FAME</b></button>
+                    <Link to={'/council'}>
+                        <button><b>COUNCIL</b></button>
+                    </Link>
+                    <Link to={'/hallOfFame'}>
+                        <button><b>HALL OF FAME</b></button>
+                    </Link>
                 </div>
             </div>
         </nav>
