@@ -1,16 +1,14 @@
 import React from "react";
-import Home from '../Webpages/Home'
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
-import IndividualSportPage from "../Webpages/IndividualSportPage/IndividualSportPage";
+import Home from '../Webpages/HomePage/Home'
+import {BrowserRouter as Router, Route} from "react-router-dom";
+import Council from "../Webpages/Council/Council";
 
 function App() {
     return (
         <Router>
             <div>
-                <Switch>
-                    <Route path="/" exact component={Home}/>
-                    <Route path='/CRICKET' exact component={IndividualSportPage}/>
-                </Switch>
+                <Route path="/" exact component={Home}/>
+                <Route path="/council" exact component={Council}/>
             </div>
         </Router>
     );
