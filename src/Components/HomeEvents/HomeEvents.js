@@ -24,6 +24,7 @@ function HomeEvents() {
         accessibility: true,
         autoplay: true,
         autoplaySpeed: 4000,
+        fade: true,
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
