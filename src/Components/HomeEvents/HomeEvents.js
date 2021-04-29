@@ -21,8 +21,9 @@ function HomeEvents() {
     }, [firestore])
 
     const settings = {
-        dots: true,
-        fade: true,
+        accessibility: true,
+        autoplay: true,
+        autoplaySpeed: 4000,
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
