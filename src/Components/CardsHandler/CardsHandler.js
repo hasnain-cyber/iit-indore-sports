@@ -4,7 +4,7 @@ import './CardsHandler.sass'
 
 function CardsHandler(props) {
 
-    const dataCards = props.dataList.map(item => <Card name={item[0]} image = {item[1]} position={item[2]} email={item[3]}/>)
+    const dataCards = props.dataList.map(item => <Card key={item[0]} name={item[0]} image = {item[1]} position={item[2]} email={item[3]}/>)
 
     return(
         <div id={'cardHandlerReturnWrapper'}>

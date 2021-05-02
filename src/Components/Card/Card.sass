@@ -1,51 +1,66 @@
 @import "../../index"
 
 .card
-  height: 500px
-  border-radius: 10px
-  background: $highlightColor
+  height: 480px
+  width: 300px
   border: 2px solid black
-  display: flex
-  flex-direction: column
-  transition: .2s
-  position: relative
-  color: white
-  text-align: center
-  padding: 2vh 2vw
-
-#cardImage
-  margin: 0 auto
-  height: 30vh
   border-radius: 10px
-  border: 4px solid black
+  padding: 10px
+  position: relative
+  background: $highlightColor
+  transition: .3s
 
-.card h1
-  font-family: 'Karantina', cursive
-  font-size: 2.5em
-  margin-top: 1vh
-
-#cardPositionHeader
-  text-decoration: underline
+.card aside
+  position: absolute
+  left: 10px
+  bottom: 0
+  width: 400px
+  transform: rotate(-90deg)
+  transform-origin: top left
+  font-family: Karantina, cursive
+  font-size: 3em
   color: #b06767
-  margin: 2vh 0
+  text-decoration: underline
+  letter-spacing: 2px
+
+.card main
+  width: 250px
+  position: absolute
+  right: 10px
+  margin: auto
+
+main img
+  height: 300px
+  width: 200px
+  margin: 10px
+  border: 4px solid black
+  border-radius: 10px
+
+main h1
+  font-family: Karantina, cursive
+  font-size: 2.5em
+  margin: 0
 
 #cardEmailHeader
-  font-size: 1.4em
-  text-decoration: underline
+  margin-top: 30px
   margin-bottom: 0
+  text-decoration: underline
+  font-family: Karantina, cursive
+  font-size: 2em
+  color: $complementaryColor
 
 #cardEmail
-  font-size: 1.2em
-  font-family: 'Roboto Thin', cursive
-  margin: 1vh 0
+  margin-top: 0
+  font-family: cursive
+  color: $complementaryColor
+
 
 .card:focus-within ~ .card, .card:hover ~ .card
-  transform: translateX(160px)
+  transform: translateX(250px)
 
 .card:hover
   transform: translateY(-1rem)
-  background: black
-  box-shadow: 0 2px 30px 15px whitesmoke
+  background: $highlightSecondaryColor
 
 .card:not(:first-child)
-  margin-left: -150px
+  margin-left: -250px
