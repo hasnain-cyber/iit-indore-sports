@@ -1,23 +1,33 @@
 @import "../../index"
 
-#cardWrapper
-  padding: 5vh 2vw
-  background: #89cab4
-  border: 4px solid black
+.card
+  height: 500px
   border-radius: 10px
+  background: $highlightColor
+  border: 2px solid black
+  display: flex
+  flex-direction: column
+  transition: .2s
+  position: relative
+  color: white
+  text-align: center
+  padding: 2vh 2vw
 
-#cardWrapper h1
+#cardImage
+  margin: 0 auto
+  height: 30vh
+  border-radius: 10px
+  border: 4px solid black
+
+.card h1
   font-family: 'Karantina', cursive
-  font-size: 3em
+  font-size: 2.5em
+  margin-top: 1vh
 
 #cardPositionHeader
   text-decoration: underline
   color: #b06767
-
-#cardImage
-  height: 30vh
-  border-radius: 25%
-  border: 4px solid black
+  margin: 2vh 0
 
 #cardEmailHeader
   font-size: 1.4em
@@ -28,3 +38,14 @@
   font-size: 1.2em
   font-family: 'Roboto Thin', cursive
   margin: 1vh 0
+
+.card:focus-within ~ .card, .card:hover ~ .card
+  transform: translateX(160px)
+
+.card:hover
+  transform: translateY(-1rem)
+  background: black
+  box-shadow: 0 2px 30px 15px whitesmoke
+
+.card:not(:first-child)
+  margin-left: -150px
