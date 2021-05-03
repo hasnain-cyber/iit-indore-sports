@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import firebase from "../../firebase";
-import EventComponent from '../EventComponent/EventComponent'
+import SliderCard from '../EventComponent/SliderCard'
 import './HomeEvents.sass'
 import Slider from "react-slick"
 
@@ -14,7 +14,8 @@ function HomeEvents() {
         const fetchEvents = async () => {
             const eventCollection = await firestore.collection('events').get()
             setEvents(eventCollection.docs.map(doc => {
-                return <EventComponent key={doc.id} doc={doc}/>
+                return <SliderCard key={doc.id} imageUrl={doc.data().imageUrl} title={doc.data().title}
+                                   description={doc.data().description} heading={'events'}/>
             }))
         }
         fetchEvents().catch(err => console.log(err))
