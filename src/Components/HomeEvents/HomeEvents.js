@@ -1,15 +1,24 @@
 import React, {useEffect, useState} from 'react'
-import firebase from "../../firebase";
-import SliderCard from '../EventComponent/SliderCard'
-import './HomeEvents.sass'
+import firebase from "../../firebase"
+import SliderCard from '../SliderCard/SliderCard'
+import '../../index.sass'
 import Slider from "react-slick"
 
 function HomeEvents() {
 
     const [events, setEvents] = useState([])
+    const settings = {
+        accessibility: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        fade: true,
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        className: 'slides'
+    }
 
     const firestore = firebase.firestore()
-
     useEffect(() => {
         const fetchEvents = async () => {
             const eventCollection = await firestore.collection('events').get()
@@ -20,17 +29,6 @@ function HomeEvents() {
         }
         fetchEvents().catch(err => console.log(err))
     }, [firestore])
-
-    const settings = {
-        accessibility: true,
-        autoplay: true,
-        autoplaySpeed: 4000,
-        fade: true,
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        className: 'slides'
-    }
 
     return (
         <Slider {...settings}>

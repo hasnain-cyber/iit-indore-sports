@@ -1,7 +1,7 @@
 import React from 'react'
 import './Council.sass'
 import Navbar from "../../Navbar/Navbar";
-import CardsHandler from "../../CardsHandler/CardsHandler";
+import CouncilCardsComponent from "../../CouncilCardsComponent/CouncilCardsComponent";
 
 class Council extends React.Component {
 
@@ -33,9 +33,9 @@ class Council extends React.Component {
                 <Navbar/>
                 <div id='hallOfFameReturnWrapper'>
                     <h1 className='councilHeader'>STAFF MEMBERS</h1>
-                    <CardsHandler dataList={this.state.staffData}/>
+                    <CouncilCardsComponent dataList={this.state.staffData}/>
                     <h1 className='councilHeader'>CAPTAINS</h1>
-                    <CardsHandler dataList={this.state.captainsData}/>
+                    <CouncilCardsComponent dataList={this.state.captainsData}/>
                 </div>
 
             </div>

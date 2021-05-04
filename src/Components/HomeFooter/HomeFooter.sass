@@ -1,13 +1,24 @@
+@import "src/index"
+
 #homeFooterReturnWrapper
   display: flex
-  justify-content: space-around
-  border-bottom: 2px solid black
+  justify-content: space-between
   padding: 20px
+  background: $tertiaryColor
+  border-top: 4px solid black
+  border-radius: 0 0 10px 10px
 
-#homeFooterReturnWrapper svg
+#homeFooterImageWrapper
+  display: flex
+  gap: 15px
+
+#homeFooterImageWrapper svg
   display: inline-block
 
 #homeFooterReturnWrapper svg:hover
+  cursor: pointer
+
+#upArrow:hover
   cursor: pointer
 
 #facebook-icon:hover path

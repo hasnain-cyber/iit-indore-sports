@@ -1,18 +1,14 @@
 @import "src/index"
 
+#navbarReturnWrapper
+  position: relative
+
 #navbar
   display: flex
   justify-content: space-between
   padding: 2vh 4vw
   border-radius: 10px 10px 0 0
   background: $tertiaryColor
-
-#navbar div
-  display: flex
-  gap: 30px
-
-#navbar .link
-  font-size: 1.4em
 
 .logo
   border-radius: 5px
@@ -27,15 +23,49 @@
   margin: auto auto
   background: transparent
   border-radius: 5px
-  transition: all ease 0.2s
+  transition: 0.2s
 
 #navbarButtonWrapper button:hover
   cursor: pointer
   box-shadow: 5px 5px
   background: white
 
-@media (max-width: 500px)
-  #navbarButtonWrapper button
-    font-size: 0.7em
-    width: 100px
-    height: 40px
+#hamburgerLinks
+  display: none
+
+#hamburgerIconWrapper
+  display: none
+
+@media screen and (max-width: 800px)
+  #navbarButtonWrapper
+    display: none
+
+  #hamburgerIconWrapper
+    display: block
+
+  #hamburgerLinks
+    font-family: Karantina, cursive
+    font-size: 1.5em
+    display: flex
+    gap: 5px
+    background: #ffe2fd
+    border-radius: 0 0 10px 10px
+    margin: 0
+    padding: 10px
+    right: 0
+    transform: scaleY(0)
+    position: absolute
+    transform-origin: top
+    transition: .4s
+
+  #hamburgerLinks li
+    list-style: none
+    padding: 1vh 4vw
+    text-align: center
+    border: 2px solid black
+    border-radius: 10px
+
+  #hamburgerLinks a
+    text-decoration: none
+    color: black
+    font-size: 1.5em

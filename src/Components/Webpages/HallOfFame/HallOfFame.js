@@ -1,6 +1,6 @@
 import React from 'react'
 import Slider from "react-slick";
-import SliderCard from "../../EventComponent/SliderCard";
+import SliderCard from "../../SliderCard/SliderCard";
 import firebase from "../../../firebase";
 
 class HallOfFame extends React.Component {
@@ -61,7 +61,7 @@ class HallOfFame extends React.Component {
         this.settings = {
             accessibility: true,
             autoplay: true,
-            autoplaySpeed: 4000,
+            autoplaySpeed: 3000,
             fade: true,
             infinite: true,
             slidesToShow: 1,

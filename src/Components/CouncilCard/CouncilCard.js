@@ -1,7 +1,7 @@
 import React from 'react'
-import './Card.sass'
+import './CouncilCard.sass'
 
-function Card(props) {
+function CouncilCard(props) {
     return (
         <article className="card">
             <aside>{props.position.toUpperCase()}</aside>
@@ -15,4 +15,4 @@ function Card(props) {
     )
 }
 
-export default Card
+export default CouncilCard
