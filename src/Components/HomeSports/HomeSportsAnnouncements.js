@@ -1,42 +1,35 @@
 import React from "react";
 import './HomeSportsAnnouncements.sass'
-import firebase from "../../firebase";
 
 class HomeSportsAnnouncements extends React.Component {
 
     constructor(props) {
         super(props)
-        this.firestore = firebase.firestore()
-        const fetchData = async () => {
-            this.announcementsCollection = await this.firestore.collection('announcements').get()
-        }
-        fetchData()
-            .then(() => {
-                this.setState(
-                    {
-                        announcements:
-                            this.announcementsCollection.docs.map(doc => {
-                                    if (doc.data().name === this.state.selectedSport) {
-                                        return <h3 className='announcementHeader'
-                                                   key={doc.data().announcement}>{doc.data().announcement}</h3>
-                                    }
-                                    return null
-                                }
-                            )
-                    }
-                )
-                const selectedIcon = document.getElementById(this.state.selectedSport)
-                selectedIcon.style.width = '50px'
-                selectedIcon.style.height = '50px'
-                selectedIcon.style.background = '#a9cec2'
-            })
-            .catch(err => console.log(err))
+        this.announcementsCollection = props.announcementsCollection
 
+        const announcements = []
+        for (let id in this.announcementsCollection.docs) {
+            const doc = this.announcementsCollection.docs[id]
+            if (doc.data().name === 'cricket') {
+                announcements.push(
+                    <h3 className='announcementHeader'
+                        key={doc.id}>{doc.data().announcement}</h3>
+                )
+            }
+        }
         this.state = {
             selectedSport: 'cricket',
-            announcements: []
+            announcements: announcements
         }
+
         this.handleImageClick = this.handleImageClick.bind(this)
+    }
+
+    componentDidMount() {
+        const selectedIcon = document.getElementById('cricket') // initializing with cricket
+        selectedIcon.style.width = '50px'
+        selectedIcon.style.height = '50px'
+        selectedIcon.style.background = '#a9cec2'
     }
 
     handleImageClick(event) {
@@ -51,17 +44,20 @@ class HomeSportsAnnouncements extends React.Component {
         selectedIcon.style.height = '50px'
         selectedIcon.style.background = '#a9cec2'
 
+        const announcements = []
+        for (let id in this.announcementsCollection.docs) {
+            const doc = this.announcementsCollection.docs[id]
+            if (doc.data().name === selectedIcon.id) {
+                announcements.push(
+                    <h3 className='announcementHeader'
+                        key={doc.id}>{doc.data().announcement}</h3>
+                )
+            }
+        }
+
         this.setState({
                 selectedSport: event.target.id,
-                announcements:
-                    this.announcementsCollection.docs.map(doc => {
-                            if (doc.data().name === event.target.id) {
-                                return <h3 className='announcementHeader'
-                                           key={doc.data().announcement}>{doc.data().announcement}</h3>
-                            }
-                            return null
-                        }
-                    )
+                announcements: announcements
             }
         )
     }

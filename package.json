@@ -48,6 +48,7 @@
   "devDependencies": {
     "hamburger-react": "^2.4.0",
     "react-router-dom": "^5.2.0",
-    "react-slick": "^0.28.1"
+    "react-slick": "^0.28.1",
+    "react-spinners": "^0.10.6"
   }
 }
