@@ -57,7 +57,6 @@ function Home() {
                 <Slider {...settings}>
                     {eventSlides}
                 </Slider>
-
                 <HomeSportsAnnouncements announcementsCollection={announcementsCollection}/>
                 <Footer/>
             </div>
