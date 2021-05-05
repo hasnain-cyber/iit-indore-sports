@@ -1,6 +1,7 @@
 import React from "react";
 import './HomeSportsAnnouncements.sass'
 
+// noinspection JSUnresolvedVariable
 class HomeSportsAnnouncements extends React.Component {
 
     constructor(props) {
@@ -9,6 +10,7 @@ class HomeSportsAnnouncements extends React.Component {
 
         const announcements = []
         for (let id in this.announcementsCollection.docs) {
+            // noinspection JSUnfilteredForInLoop
             const doc = this.announcementsCollection.docs[id]
             if (doc.data().name === 'cricket') {
                 announcements.push(
@@ -46,8 +48,10 @@ class HomeSportsAnnouncements extends React.Component {
 
         const announcements = []
         for (let id in this.announcementsCollection.docs) {
+            // noinspection JSUnfilteredForInLoop
             const doc = this.announcementsCollection.docs[id]
             if (doc.data().name === selectedIcon.id) {
+                // noinspection JSUnresolvedVariable
                 announcements.push(
                     <h3 className='announcementHeader'
                         key={doc.id}>{doc.data().announcement}</h3>

@@ -6,6 +6,7 @@ import './HallOfFame.sass'
 import Navbar from "../../Navbar/Navbar"
 import {PropagateLoader as Loader} from "react-spinners"
 
+// noinspection JSUnfilteredForInLoop
 class HallOfFame extends React.Component {
 
     settings = {
