@@ -31,13 +31,12 @@ class Council extends React.Component {
         return (
             <div>
                 <Navbar/>
-                <div id='hallOfFameReturnWrapper'>
+                <div id='councilReturnWrapper'>
                     <h1 className='councilHeader'>STAFF MEMBERS</h1>
                     <CouncilCardsComponent dataList={this.state.staffData}/>
                     <h1 className='councilHeader'>CAPTAINS</h1>
                     <CouncilCardsComponent dataList={this.state.captainsData}/>
                 </div>
-
             </div>
         )
     }

@@ -1,9 +1,22 @@
 import React from 'react'
-import Slider from "react-slick";
-import SliderCard from "../../SliderCard/SliderCard";
-import firebase from "../../../firebase";
+import Slider from "react-slick"
+import SliderCard from "../../SliderCard/SliderCard"
+import firebase from "../../../firebase"
+import './HallOfFame.sass'
+import Navbar from "../../Navbar/Navbar";
 
 class HallOfFame extends React.Component {
+
+    settings = {
+        accessibility: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        fade: true,
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        className: 'slides'
+    }
 
     constructor(props) {
         super(props)
@@ -24,15 +37,16 @@ class HallOfFame extends React.Component {
 
         const firestore = firebase.firestore()
 
-        this.fetchEvents = async () => {
+        const fetchEvents = async () => {
             const eventCollection = await firestore.collection('awardees').get()
             this.setState({
                 slides:
                     eventCollection.docs.map(doc => {
                         const docData = doc.data()
-                        const slideCard = <SliderCard key={doc.id} imageUrl={docData.imageUrl} title={docData.title}
-                                                      description={docData.description} heading={docData.sport}/>
                         const sport = docData.sport
+                        const slideCard = <SliderCard key={doc.id} imageUrl={docData.imageUrl} title={docData.title}
+                                                      description={docData.description} heading={sport}/>
+
                         if (sport === 'cricket')
                             this.cricketSlides.push(slideCard)
                         else if (sport === 'football')
@@ -56,50 +70,42 @@ class HallOfFame extends React.Component {
                     })
             })
         }
-        this.fetchEvents().catch(err => console.log(err))
-
-        this.settings = {
-            accessibility: true,
-            autoplay: true,
-            autoplaySpeed: 3000,
-            fade: true,
-            infinite: true,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            className: 'slides'
-        }
+        fetchEvents().catch(err => console.log(err))
     }
 
     render() {
         return (
-            <div id={'hallOfFameReturnWrapper'}>
-                <Slider {...this.settings}>
-                    {this.cricketSlides}
-                </Slider>
-                <Slider {...this.settings}>
-                    {this.footballSlides}
-                </Slider>
-                <Slider {...this.settings}>
-                    {this.basketballSlides}
-                </Slider>
-                <Slider {...this.settings}>
-                    {this.badmintonSlides}
-                </Slider>
-                <Slider {...this.settings}>
-                    {this.athleticsSlides}
-                </Slider>
-                <Slider {...this.settings}>
-                    {this.ttSlides}
-                </Slider>
-                <Slider {...this.settings}>
-                    {this.tennisSlides}
-                </Slider>
-                <Slider {...this.settings}>
-                    {this.volleyballSlides}
-                </Slider>
-                <Slider {...this.settings}>
-                    {this.chessSlides}
-                </Slider>
+            <div>
+                <Navbar/>
+                <div id={'hallOfFameReturnWrapper'}>
+                    <Slider {...this.settings}>
+                        {this.cricketSlides}
+                    </Slider>
+                    <Slider {...this.settings}>
+                        {this.footballSlides}
+                    </Slider>
+                    <Slider {...this.settings}>
+                        {this.basketballSlides}
+                    </Slider>
+                    <Slider {...this.settings}>
+                        {this.badmintonSlides}
+                    </Slider>
+                    <Slider {...this.settings}>
+                        {this.athleticsSlides}
+                    </Slider>
+                    <Slider {...this.settings}>
+                        {this.ttSlides}
+                    </Slider>
+                    <Slider {...this.settings}>
+                        {this.tennisSlides}
+                    </Slider>
+                    <Slider {...this.settings}>
+                        {this.volleyballSlides}
+                    </Slider>
+                    <Slider {...this.settings}>
+                        {this.chessSlides}
+                    </Slider>
+                </div>
             </div>
         )
     }
