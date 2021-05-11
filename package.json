@@ -13,6 +13,7 @@
     "react-slick": "^0.28.1",
     "react-spinners": "^0.10.6",
     "sass": "^1.32.12",
+    "slick-carousel": "^1.8.1",
     "typescript": "^4.2.4"
   },
   "scripts": {
