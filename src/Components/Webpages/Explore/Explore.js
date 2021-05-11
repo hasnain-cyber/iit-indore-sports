@@ -42,7 +42,9 @@ function Explore() {
         return (
             <div id='explorePageReturnWrapper'>
                 <Navbar/>
-                <video src={'/train.mp4'} autoPlay controls muted/>
+                <div id="videoWrapper">
+                    <video src={'/train.mp4'} autoPlay controls muted/>
+                </div>
                 <div id="cardListReturnWrapper">
                     {cardList}
                 </div>
