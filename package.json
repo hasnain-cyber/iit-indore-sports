@@ -3,23 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@babel/core": "^7.14.0",
-    "@testing-library/jest-dom": "^5.12.0",
-    "@testing-library/react": "^11.2.6",
-    "@testing-library/user-event": "^12.8.3",
     "firebase": "^8.4.2",
-    "firestore-store": "^2.0.2",
-    "jquery": "^3.6.0",
-    "node-sass": "^5.0.0",
     "react": "^16.14.0",
-    "react-burger-menu": "^2.9.2",
     "react-dom": "^16.14.0",
-    "react-hamburger-icon": "^1.0.2",
-    "react-hamburger-menu": "^1.2.1",
+    "react-reveal": "^1.2.2",
     "react-scripts": "4.0.3",
-    "slick-carousel": "^1.8.1",
     "typescript": "^4.2.4",
-    "web-vitals": "^1.1.1"
+    "hamburger-react": "^2.4.0",
+    "react-router-dom": "^5.2.0",
+    "react-slick": "^0.28.1",
+    "react-spinners": "^0.10.6"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -44,11 +37,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "hamburger-react": "^2.4.0",
-    "react-router-dom": "^5.2.0",
-    "react-slick": "^0.28.1",
-    "react-spinners": "^0.10.6"
   }
 }
