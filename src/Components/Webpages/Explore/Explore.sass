@@ -1,17 +1,29 @@
 #explorePageReturnWrapper
   background: #ffeae0
 
-#videoWrapper
-  display: flex
-  height: 90vh
-
 #explorePageReturnWrapper video
   width: 90vw
   max-width: 950px
   display: block
-  margin: auto
+  margin: 10vh auto
   border: 4px solid black
   border-radius: 10px
 
+#explorePageReturnWrapper p
+  font-family: cursive
+  font-size: 1.5em
+  width: 800px
+  max-width: 80vw
+  text-align: center
+  margin: 5vh auto
+
 #cardListReturnWrapper
   padding: 2vh 2vw
+
+@media (max-width: 700px)
+  #explorePageReturnWrapper p
+    font-size: 1em
+
+@media (max-width: 500px)
+  #explorePageReturnWrapper p
+    font-size: 0.8em
