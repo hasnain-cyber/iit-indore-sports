@@ -1,14 +1,17 @@
 @import "src/index"
 
 #homeSportsReturnWrapper
-  background: $secondaryColor
-  padding: 7vh 2vw
+  background: #ffe7c4
+  padding: 5vh 2vw
   text-align: center
   border-radius: 10px 10px 0 0
 
 #homeSportsReturnWrapper h1
   font-size: 1.6em
   font-family: 'Zen Dots', cursive
+
+#announcementsHeader
+  color: #5f3c03
 
 .sport-icon
   width: 32px
@@ -17,7 +20,7 @@
 
   border: 2px solid black
   border-radius: 10px
-  transition: all ease 0.2s
+  transition: all ease 0.3s
 
 .sport-icon:hover
   cursor: pointer
@@ -27,7 +30,7 @@
   justify-content: center
   min-height: 64px
   gap: 3vw
-  margin: 8vh 0 4vh 0
+  margin: 4vh 0
 
 #sportAnnouncements
   width: 70vw
@@ -38,11 +41,9 @@
   border-radius: 10px
   overflow-y: scroll
 
-#sportAnnouncements h1
-  margin-bottom: 5vh
-
-.announcementHeader
-  background: $highlightColor
+.announcement
+  background: #8a5506
+  color: white
   border-radius: 10px
   padding: 1vh 2vw
   transform: skew(10deg)

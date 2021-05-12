@@ -1,5 +1,3 @@
-@import "src/index"
-
 #navbarReturnWrapper
   position: relative
 
@@ -8,7 +6,7 @@
   justify-content: space-between
   padding: 2vh 4vw
   border-radius: 10px 10px 0 0
-  background: $secondaryColor
+  background: #ffd294
 
 .logo
   border-radius: 5px
@@ -22,14 +20,13 @@
   width: 120px
   height: 40px
   margin: auto auto
-  background: transparent
+  background: #F7ECDC
   border-radius: 5px
   transition: 0.2s
 
 #navbarButtonWrapper button:hover
   cursor: pointer
-  box-shadow: 5px 5px
-  background: white
+  box-shadow: 5px 5px #ab6a0d
 
 #hamburgerLinks
   display: none
@@ -49,23 +46,21 @@
     font-size: 1.5em
     display: flex
     flex-direction: column
-    gap: 2vh
-    background: #ffe2fd
+    background: #F7ECDC
     border-radius: 0 0 10px 10px
-    margin: 0
-    padding: 10px
-    right: 0
-    transform: scaleY(0)
     position: absolute
-    z-index: 1 // to fix the underlapping from council cards
+    right: 0
+    margin: 0
+    z-index: 1 // to fix the under-lapping from council cards
+    padding: 10px
     transform-origin: top
+    transform: scaleY(0)
     transition: .4s
 
   #hamburgerLinks li
     list-style: none
-    padding: 1vh 4vw
+    padding: 2vh 5vw
     text-align: center
-    border-radius: 10px
 
   #hamburgerLinks a
     text-decoration: none

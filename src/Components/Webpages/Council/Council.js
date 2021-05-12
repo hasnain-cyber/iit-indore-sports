@@ -1,41 +1,65 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import './Council.sass'
 import Navbar from "../../Navbar/Navbar";
-import CouncilCardsComponent from "../../CouncilCardsComponent/CouncilCardsComponent";
+import CouncilCard from "../../CouncilCard/CouncilCard"
+import firebase from "../../../firebase";
+import {PropagateLoader as Loader} from "react-spinners";
 
-class Council extends React.Component {
+function Council() {
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            staffData: [
-                ['Lalit Borana', '/Staff-Photos/Lalit-Borana.PNG', 'Sports Convener', 'Lalitborana@IITI.ac.in'],
-                ['Renchu. T', '/Staff-Photos/Renchu-T.jpg', 'Sports Officer', 'Sportsofficer@IITI.ac.in'],
-                ['Bipin Kumar', '/Staff-Photos/Bipin-Kumar.PNG', 'Sports Secretary', 'gs.sports@IITI.ac.in']
-            ],
-            captainsData: [
-                ['Sukesh', '/Captain-Photos/Sukesh.jpg', 'Athletics', 'atheletics@IITI.ac.in'],
-                ['Manav Trivedi', '/Captain-Photos/Manav Trivedi.jpg', 'Badminton', 'badminton@IITI.ac.in'],
-                ['Samarth Anand', '/Captain-Photos/Samarth Anand.jpg', 'Basketball', 'basketball@IITI.ac.in'],
-                ['Rohit Bankar', '/Captain-Photos/Rohit Bankar.jpg', 'Chess', 'chess@IITI.ac.in'],
-                ['Aditya Sharma', '/Captain-Photos/Aditya Sharma.jpg', 'Cricket', 'cricket@IITI.ac.in'],
-                ['Soham Kapileshwar', '/Captain-Photos/Soham Kapileshwar.jpg', 'Soccer', 'soccer@IITI.ac.in'],
-                ['Aadish', '/Captain-Photos/Aadish.PNG', 'Table Tennis', 'tabletennis@IITI.ac.in'],
-                ['Govind Agrawal', '/Captain-Photos/Govind Agrawal.jpg', 'Tennis', 'tennis@IITI.ac.in'],
-                ['Uday Vankdavat', '/Captain-Photos/Uday Vankdavat.png', 'Volleyball', 'volleyball@IITI.ac.in']
-            ]
+    const [staffCards, setStaffCards] = useState([])
+    const [captainsCards, setCaptainsCards] = useState([])
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+
+        const fetchEvents = async () => {
+
+            const firestore = firebase.firestore()
+
+            const staffCollection = await firestore.collection('staff').get()
+            const tempStaffCards = []
+            staffCollection.docs.forEach(doc => {
+                const docData = doc.data()
+                tempStaffCards.push(<CouncilCard key={doc.id} name={docData.name} image={docData.imageUrl}
+                                                 position={docData.position} email={docData.email}/>)
+            })
+            setStaffCards(tempStaffCards)
+
+            const captainsCollection = await firestore.collection('captains').get()
+            const tempCaptainsCards = []
+            captainsCollection.docs.forEach(doc => {
+                const docData = doc.data()
+                tempCaptainsCards.push(<CouncilCard key={doc.id} name={docData.name} image={docData.imageUrl}
+                                                    position={docData.position} email={docData.email}/>)
+            })
+            setCaptainsCards(tempCaptainsCards)
         }
-    }
+        fetchEvents()
+            .then(() => {
+                setLoading(false)
+            })
+            .catch(err => console.log(err))
+    }, [])
 
-    render() {
+    if (loading) {
+        return (
+            <Loader loading={true} color={'#5a5a9f'}
+                    css={{position: "fixed", top: "50%", left: "50%"}}/>
+        )
+    } else {
         return (
             <div>
                 <Navbar/>
                 <div id='councilReturnWrapper'>
                     <h1 className='councilHeader'>STAFF MEMBERS</h1>
-                    <CouncilCardsComponent dataList={this.state.staffData}/>
+                    <div className={'cardHandlerReturnWrapper'}>
+                        {staffCards}
+                    </div>
                     <h1 className='councilHeader'>CAPTAINS</h1>
-                    <CouncilCardsComponent dataList={this.state.captainsData}/>
+                    <div className={'cardHandlerReturnWrapper'}>
+                        {captainsCards}
+                    </div>
                 </div>
             </div>
         )

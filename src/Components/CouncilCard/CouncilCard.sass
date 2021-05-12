@@ -1,4 +1,4 @@
-@import "../../index"
+$emailColor: #754609
 
 .card
   height: 480px
@@ -7,7 +7,7 @@
   border-radius: 10px
   padding: 10px
   position: relative
-  background: #c9b8ff
+  background: #ffd294
   transition: .3s
 
 .card aside
@@ -19,7 +19,7 @@
   transform-origin: top left
   font-family: Karantina, cursive
   font-size: 3em
-  color: #b06767
+  color: #0f476b
   text-decoration: underline
   letter-spacing: 2px
 
@@ -36,10 +36,11 @@ main img
   border: 4px solid black
   border-radius: 10px
 
-main h1
+#nameHeader
   font-family: Karantina, cursive
   font-size: 2.5em
   margin: 0
+  color: #0f476b
 
 #cardEmailHeader
   margin-top: 30px
@@ -47,19 +48,19 @@ main h1
   text-decoration: underline
   font-family: Karantina, cursive
   font-size: 2em
-  color: $complementaryColor
+  color: $emailColor
 
 #cardEmail
   margin-top: 0
   font-family: cursive
-  color: $complementaryColor
+  color: $emailColor
 
 .card:focus-within ~ .card, .card:hover ~ .card
   transform: translateX(250px)
 
 .card:hover
   transform: translateY(-10px)
-  background: #9485ef
+  background: #ffaf47
 
 .card:not(:first-child)
   margin-left: -250px

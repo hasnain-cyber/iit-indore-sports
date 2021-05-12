@@ -14,7 +14,7 @@ class HomeSportsAnnouncements extends React.Component {
             const doc = this.announcementsCollection.docs[id]
             if (doc.data().name === 'cricket') {
                 announcements.push(
-                    <h3 className='announcementHeader'
+                    <h3 className='announcement'
                         key={doc.id}>{doc.data().announcement}</h3>
                 )
             }
@@ -53,7 +53,7 @@ class HomeSportsAnnouncements extends React.Component {
             if (doc.data().name === selectedIcon.id) {
                 // noinspection JSUnresolvedVariable
                 announcements.push(
-                    <h3 className='announcementHeader'
+                    <h3 className='announcement'
                         key={doc.id}>{doc.data().announcement}</h3>
                 )
             }
@@ -69,7 +69,7 @@ class HomeSportsAnnouncements extends React.Component {
     render() {
         return (
             <div id='homeSportsReturnWrapper'>
-                <h1>ANNOUNCEMENTS</h1>
+                <h1 id={'announcementsHeader'}>ANNOUNCEMENTS</h1>
                 <div className="horizontal-sport">
                     <img id='cricket' className='sport-icon' src={'/Home-Sports-Icons/cricket.svg'}
                          onClick={this.handleImageClick} alt=''/>

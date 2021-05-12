@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Slider from "react-slick"
 import SliderCard from "../../SliderCard/SliderCard"
 import firebase from "../../../firebase"
@@ -7,9 +7,11 @@ import Navbar from "../../Navbar/Navbar"
 import {PropagateLoader as Loader} from "react-spinners"
 
 // noinspection JSUnfilteredForInLoop
-class HallOfFame extends React.Component {
+function HallOfFame() {
 
-    settings = {
+    const [loading, setLoading] = useState(true)
+
+    const settings = {
         accessibility: true,
         autoplay: true,
         autoplaySpeed: 3000,
@@ -20,101 +22,89 @@ class HallOfFame extends React.Component {
         className: 'slides'
     }
 
-    constructor(props) {
-        super(props)
+    const [cricketSlides, setCricketSlides] = useState([])
+    const [footballSlides, setFootballSlides] = useState([])
+    const [basketballSlides, setBasketballSlides] = useState([])
+    const [badmintonSlides, setBadmintonSlides] = useState([])
+    const [athleticsSlides, setAthleticsSlides] = useState([])
+    const [ttSlides, setTtSlides] = useState([])
+    const [tennisSlides, setTennisSlides] = useState([])
+    const [volleyballSlides, setVolleyballSlides] = useState([])
+    const [chessSlides, setChessSlides] = useState([])
 
-        this.state = {
-            loading: true,
-            slides: [],
-        }
+    const firestore = firebase.firestore()
+    const fetchEvents = async () => {
+        const dataCollection = await firestore.collection('awardees').get()
+        dataCollection.docs.forEach(doc => {
+            const docData = doc.data()
+            const sport = docData.sport
+            const slideCard = <SliderCard key={doc.id} imageUrl={docData.imageUrl} title={docData.title}
+                                          description={docData.description} heading={sport}/>
 
-        this.cricketSlides = []
-        this.footballSlides = []
-        this.basketballSlides = []
-        this.badmintonSlides = []
-        this.athleticsSlides = []
-        this.ttSlides = []
-        this.tennisSlides = []
-        this.volleyballSlides = []
-        this.chessSlides = []
-
-        const firestore = firebase.firestore()
-        const fetchEvents = async () => {
-            const dataCollection = await firestore.collection('awardees').get()
-            for (let id in dataCollection.docs) {
-                const doc = dataCollection.docs[id]
-                const docData = doc.data()
-                const sport = docData.sport
-                const slideCard = <SliderCard key={doc.id} imageUrl={docData.imageUrl} title={docData.title}
-                                              description={docData.description} heading={sport}/>
-
-                if (sport === 'cricket')
-                    this.cricketSlides.push(slideCard)
-                else if (sport === 'football')
-                    this.footballSlides.push(slideCard)
-                else if (sport === 'basketball')
-                    this.basketballSlides.push(slideCard)
-                else if (sport === 'badminton')
-                    this.badmintonSlides.push(slideCard)
-                else if (sport === 'athletics')
-                    this.athleticsSlides.push(slideCard)
-                else if (sport === 'table tennis')
-                    this.ttSlides.push(slideCard)
-                else if (sport === 'tennis')
-                    this.tennisSlides.push(slideCard)
-                else if (sport === 'volleyball')
-                    this.volleyballSlides.push(slideCard)
-                else if (sport === 'chess')
-                    this.chessSlides.push(slideCard)
-            }
-        }
-        fetchEvents()
-            .then(() => this.setState({loading: false}))
-            .catch(err => console.log(err))
+            if (sport === 'cricket')
+                setCricketSlides(cricketSlides.concat(slideCard))
+            else if (sport === 'football')
+                setFootballSlides(footballSlides.concat(slideCard))
+            else if (sport === 'basketball')
+                setBasketballSlides(basketballSlides.concat(slideCard))
+            else if (sport === 'badminton')
+                setBadmintonSlides(badmintonSlides.concat(slideCard))
+            else if (sport === 'athletics')
+                setAthleticsSlides(athleticsSlides.concat(slideCard))
+            else if (sport === 'table tennis')
+                setTtSlides(ttSlides.concat(slideCard))
+            else if (sport === 'tennis')
+                setTennisSlides(tennisSlides.concat(slideCard))
+            else if (sport === 'volleyball')
+                setVolleyballSlides(volleyballSlides.concat(slideCard))
+            else if (sport === 'chess')
+                setChessSlides(chessSlides.concat(slideCard))
+        })
     }
+    fetchEvents()
+        .then(() => setLoading(false))
+        .catch(err => console.log(err))
 
-    render() {
-        if (this.state.loading) {
-            return (
-                <Loader loading={true} color={'#5a5a9f'}
-                        css={{position: "fixed", top: "50%", left: "50%"}}/>
-            )
-        } else {
-            return (
-                <div>
-                    <Navbar/>
-                    <div id={'hallOfFameReturnWrapper'}>
-                        <Slider {...this.settings}>
-                            {this.cricketSlides}
-                        </Slider>
-                        <Slider {...this.settings}>
-                            {this.footballSlides}
-                        </Slider>
-                        <Slider {...this.settings}>
-                            {this.basketballSlides}
-                        </Slider>
-                        <Slider {...this.settings}>
-                            {this.badmintonSlides}
-                        </Slider>
-                        <Slider {...this.settings}>
-                            {this.athleticsSlides}
-                        </Slider>
-                        <Slider {...this.settings}>
-                            {this.ttSlides}
-                        </Slider>
-                        <Slider {...this.settings}>
-                            {this.tennisSlides}
-                        </Slider>
-                        <Slider {...this.settings}>
-                            {this.volleyballSlides}
-                        </Slider>
-                        <Slider {...this.settings}>
-                            {this.chessSlides}
-                        </Slider>
-                    </div>
+    if (loading) {
+        return (
+            <Loader loading={true} color={'#5a5a9f'}
+                    css={{position: "fixed", top: "50%", left: "50%"}}/>
+        )
+    } else {
+        return (
+            <div>
+                <Navbar/>
+                <div id={'hallOfFameReturnWrapper'}>
+                    <Slider {...settings}>
+                        {cricketSlides}
+                    </Slider>
+                    <Slider {...settings}>
+                        {footballSlides}
+                    </Slider>
+                    <Slider {...settings}>
+                        {basketballSlides}
+                    </Slider>
+                    <Slider {...settings}>
+                        {badmintonSlides}
+                    </Slider>
+                    <Slider {...settings}>
+                        {athleticsSlides}
+                    </Slider>
+                    <Slider {...settings}>
+                        {ttSlides}
+                    </Slider>
+                    <Slider {...settings}>
+                        {tennisSlides}
+                    </Slider>
+                    <Slider {...settings}>
+                        {volleyballSlides}
+                    </Slider>
+                    <Slider {...settings}>
+                        {chessSlides}
+                    </Slider>
                 </div>
-            )
-        }
+            </div>
+        )
     }
 }
 
