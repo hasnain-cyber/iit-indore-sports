@@ -1,0 +1,17 @@
+#hall-of-fame-slides-manager {
+  text-align: center;
+  background: #ffeae0;
+
+  .slick-slide {
+    background: url("confetti.jpg") center;
+    background-size: cover;
+  }
+
+  h1,p {
+    color: white;
+  }
+
+  img {
+    border: 2px solid white;
+  }
+}
