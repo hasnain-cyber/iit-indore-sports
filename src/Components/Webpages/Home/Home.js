@@ -16,8 +16,7 @@ function Home() {
         fade: true,
         infinite: true,
         slidesToShow: 1,
-        slidesToScroll: 1,
-        className: 'slides'
+        slidesToScroll: 1
     }
 
     const [eventSlides, setEventSlides] = useState([])

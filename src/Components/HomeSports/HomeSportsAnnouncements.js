@@ -47,7 +47,6 @@ class HomeSportsAnnouncements extends React.Component {
         const announcements = []
         this.announcementsCollection.docs.forEach(doc => {
             if (doc.data().name === selectedIcon.id) {
-                // noinspection JSUnresolvedVariable
                 announcements.push(
                     <div className={'announcement-wrapper'} key={doc.id}>
                         <h3 className='announcement'>{doc.data().announcement}</h3>
