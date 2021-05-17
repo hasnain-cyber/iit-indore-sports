@@ -28,7 +28,7 @@
 .horizontal-sport
   display: flex
   justify-content: center
-  min-height: 64px
+  min-height: 64px // to prevent this div from jumping during transition, could not find a smarter way.
   gap: 3vw
   margin: 4vh 0
 
@@ -41,9 +41,13 @@
   border-radius: 10px
   overflow-y: scroll
 
-.announcement
+.announcement-wrapper
   background: #8a5506
   color: white
-  border-radius: 10px
-  padding: 1vh 2vw
-  transform: skew(10deg)
+  margin: 2vh 5vw
+  padding: 2vh 2vw
+  transform: skew(40deg)
+
+.announcement
+  transform: skew(-40deg)
+  margin: 0

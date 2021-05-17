@@ -1,5 +1,5 @@
 import React from "react";
-import Home from '../Webpages/HomePage/Home'
+import Home from '../Webpages/Home/Home'
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import Council from "../Webpages/Council/Council";
 import HallOfFame from "../Webpages/HallOfFame/HallOfFame";

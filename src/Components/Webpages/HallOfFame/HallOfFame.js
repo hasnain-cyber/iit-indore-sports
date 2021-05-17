@@ -6,15 +6,12 @@ import './HallOfFame.sass'
 import Navbar from "../../Navbar/Navbar"
 import {PropagateLoader as Loader} from "react-spinners"
 
-// noinspection JSUnfilteredForInLoop
 function HallOfFame() {
 
     const [loading, setLoading] = useState(true)
 
     const settings = {
-        accessibility: true,
-        autoplay: true,
-        autoplaySpeed: 3000,
+        arrows: true,
         fade: true,
         infinite: true,
         slidesToShow: 1,

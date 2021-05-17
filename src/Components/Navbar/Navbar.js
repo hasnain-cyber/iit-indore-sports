@@ -27,13 +27,14 @@ class Navbar extends React.Component {
         return (
             <div id={'navbarReturnWrapper'}>
                 <nav id="navbar">
-                    <Link to='/'>
-                        <img className="logo" src={'/logo.png'} alt="logo"/>
-                    </Link>
+                    <img className="logo" src={'/logo.png'} alt="logo"/>
                     <div id={'hamburgerIconWrapper'}>
                         <Hamburger toggled={this.state.isOpen} toggle={this.handleClick}/>
                     </div>
                     <div id='navbarButtonWrapper'>
+                        <Link to={'/'}>
+                            <button><b>HOME</b></button>
+                        </Link>
                         <Link to={'/council'}>
                             <button><b>COUNCIL</b></button>
                         </Link>
@@ -46,9 +47,26 @@ class Navbar extends React.Component {
                     </div>
                 </nav>
                 <ul id={'hamburgerLinks'}>
-                    <li><a href={'/council'}>COUNCIL</a></li>
-                    <li><a href={'/hallOfFame'}>HALL OF FAME</a></li>
-                    <li><a href={'/explore'}>EXPLORE</a></li>
+                    <li>
+                        <Link to={'/'}>
+                            <span>HOME</span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to={'/council'}>
+                            <span>COUNCIL</span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to={'/hallOfFame'}>
+                            <span>HALL OF FAME</span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to={'/explore'}>
+                            <span>EXPLORE</span>
+                        </Link>
+                    </li>
                 </ul>
             </div>
         )

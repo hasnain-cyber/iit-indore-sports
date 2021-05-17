@@ -12,9 +12,7 @@ function Home() {
 
     const [loading, setLoading] = useState(true)
     const settings = {
-        accessibility: true,
-        autoplay: true,
-        autoplaySpeed: 3000,
+        arrows: true,
         fade: true,
         infinite: true,
         slidesToShow: 1,
@@ -57,6 +55,7 @@ function Home() {
                 <Slider {...settings}>
                     {eventSlides}
                 </Slider>
+                {/*sport announcements are shown here*/}
                 <HomeSportsAnnouncements announcementsCollection={announcementsCollection}/>
                 <Footer/>
             </div>

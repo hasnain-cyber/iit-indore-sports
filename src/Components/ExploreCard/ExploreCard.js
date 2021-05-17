@@ -1,6 +1,7 @@
 import React from 'react'
 import './ExploreCard.sass'
 import Slide from 'react-reveal/Slide'
+import Fade from 'react-reveal/Fade'
 
 function ExploreCard(props) {
 
@@ -16,7 +17,9 @@ function ExploreCard(props) {
             <Slide left={props.alignment===0} right = {props.alignment!==0}>
                 <img className={'exploreCardImage'} src={props.imageUrl} alt={''}/>
             </Slide>
-            <p>{props.text}</p>
+            <Fade>
+                <p>{props.text}</p>
+            </Fade>
         </div>
     )
 }

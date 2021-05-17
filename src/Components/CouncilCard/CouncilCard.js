@@ -9,7 +9,9 @@ function CouncilCard(props) {
                 <img id={'cardImage'} src={props.image} alt=''/>
                 <h1 id={'nameHeader'}>{props.name.toUpperCase()}</h1>
                 <h4 id={'cardEmailHeader'}>EMAIL</h4>
-                <h4 id={'cardEmail'}>{props.email}</h4>
+                <a id={'cardEmailAnchor'} href={`mailto:${props.email}`}>
+                    <h4 id={'cardEmail'}>{props.email}</h4>
+                </a>
             </main>
         </article>
     )

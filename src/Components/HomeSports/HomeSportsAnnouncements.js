@@ -1,7 +1,6 @@
 import React from "react";
 import './HomeSportsAnnouncements.sass'
 
-// noinspection JSUnresolvedVariable
 class HomeSportsAnnouncements extends React.Component {
 
     constructor(props) {
@@ -9,16 +8,15 @@ class HomeSportsAnnouncements extends React.Component {
         this.announcementsCollection = props.announcementsCollection
 
         const announcements = []
-        for (let id in this.announcementsCollection.docs) {
-            // noinspection JSUnfilteredForInLoop
-            const doc = this.announcementsCollection.docs[id]
+        this.announcementsCollection.forEach(doc => {
             if (doc.data().name === 'cricket') {
                 announcements.push(
-                    <h3 className='announcement'
-                        key={doc.id}>{doc.data().announcement}</h3>
+                    <div className={'announcement-wrapper'} key={doc.id}>
+                        <h3 className='announcement'>{doc.data().announcement}</h3>
+                    </div>
                 )
             }
-        }
+        })
         this.state = {
             selectedSport: 'cricket',
             announcements: announcements
@@ -47,17 +45,16 @@ class HomeSportsAnnouncements extends React.Component {
         selectedIcon.style.background = '#a9cec2'
 
         const announcements = []
-        for (let id in this.announcementsCollection.docs) {
-            // noinspection JSUnfilteredForInLoop
-            const doc = this.announcementsCollection.docs[id]
+        this.announcementsCollection.docs.forEach(doc => {
             if (doc.data().name === selectedIcon.id) {
                 // noinspection JSUnresolvedVariable
                 announcements.push(
-                    <h3 className='announcement'
-                        key={doc.id}>{doc.data().announcement}</h3>
+                    <div className={'announcement-wrapper'} key={doc.id}>
+                        <h3 className='announcement'>{doc.data().announcement}</h3>
+                    </div>
                 )
             }
-        }
+        })
 
         this.setState({
                 selectedSport: event.target.id,

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+SC&display=swap')
 
-.slick-initialized // to prevent unnecessary horizontal scroll because of slick-track
-  overflow-x: hidden
+//.slick-initialized // to prevent unnecessary horizontal scroll because of slick-track
+//  overflow-x: hidden
 
 .slick-track
   display: flex !important // so that it takes height of the longest slide
@@ -14,18 +14,23 @@
   border-radius: 10px
   text-align: center
 
-#sliderCardReturnWrapper
-  padding: 2vh 2vw
+.slick-next
+  right: 10px
+  z-index: 1
+
+.slick-prev
+  left: 10px
+  z-index: 1
 
 #sliderCardHeading
   font-family: 'Zen Dots', cursive
-  margin: 3vh
+  margin: 5vh
   font-size: 2.5em
   color: #5f3c03
 
 #sliderCardTitle
   font-family: 'Zen Dots', cursive
-  margin: 3vh
+  margin: 5vh
   font-size: 1.4em
 
 #sliderCardReturnWrapper img
@@ -36,3 +41,4 @@
 
 #sliderCardReturnWrapper p
   font-family: 'Alegreya SC', serif
+  margin: 5vh
