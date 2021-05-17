@@ -27,21 +27,21 @@ class HomeSportsAnnouncements extends React.Component {
 
     componentDidMount() {
         const selectedIcon = document.getElementById('cricket') // initializing with cricket
-        selectedIcon.style.width = '50px'
-        selectedIcon.style.height = '50px'
+        selectedIcon.style.width = '40px'
+        selectedIcon.style.height = '40px'
         selectedIcon.style.background = '#a9cec2'
     }
 
     handleImageClick(event) {
 
         let selectedIcon = document.getElementById(this.state.selectedSport)
-        selectedIcon.style.width = '32px'
-        selectedIcon.style.height = '32px'
+        selectedIcon.style.width = '30px'
+        selectedIcon.style.height = '30px'
         selectedIcon.style.background = 'transparent'
 
         selectedIcon = event.target
-        selectedIcon.style.width = '50px'
-        selectedIcon.style.height = '50px'
+        selectedIcon.style.width = '40px'
+        selectedIcon.style.height = '40px'
         selectedIcon.style.background = '#a9cec2'
 
         const announcements = []

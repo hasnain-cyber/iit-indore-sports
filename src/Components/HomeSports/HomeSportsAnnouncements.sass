@@ -4,23 +4,22 @@
   background: #ffe7c4
   padding: 5vh 2vw
   text-align: center
-  border-radius: 10px 10px 0 0
 
 #homeSportsReturnWrapper h1
-  font-size: 1.6em
   font-family: 'Zen Dots', cursive
 
 #announcementsHeader
+  font-size: 1.6rem
   color: #5f3c03
 
 .sport-icon
-  width: 32px
-  height: 32px
-  padding: 5px
+  width: 30px
+  height: 30px
+  padding: 10px
 
   border: 2px solid black
-  border-radius: 10px
-  transition: all ease 0.3s
+  border-radius: 5px
+  transition: 0.2s
 
 .sport-icon:hover
   cursor: pointer
@@ -30,16 +29,17 @@
   justify-content: center
   min-height: 64px // to prevent this div from jumping during transition, could not find a smarter way.
   gap: 3vw
-  margin: 4vh 0
+  padding: 5vh
 
 #sportAnnouncements
-  width: 70vw
   height: 50vh
-  padding: 0 3vw
   margin: 0 auto
   border: 2px solid black
-  border-radius: 10px
+  border-radius: 5px
   overflow-y: scroll
+
+  h1
+    font-size: 1.4em
 
 .announcement-wrapper
   background: #8a5506
@@ -53,3 +53,10 @@
   word-spacing: 5px
   transform: skew(-20deg)
   margin: 0
+
+@media (max-width: 400px)
+  .sport-icon
+    padding: 4px
+
+  #announcementsHeader
+    font-size: 1.4em
