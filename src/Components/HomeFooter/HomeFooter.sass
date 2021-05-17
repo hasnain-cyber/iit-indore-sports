@@ -1,12 +1,37 @@
 @import "src/index"
 
-#homeFooterReturnWrapper
+#home-footer-return-wrapper
+  background: #ffe7c4
+  padding: 20px
+  border-top: 4px solid black
+  border-radius: 0 0 10px 10px
+
+#home-footer-upper-wrapper
   display: flex
   justify-content: space-between
   padding: 20px
-  background: #ffe7c4
-  border-top: 4px solid black
-  border-radius: 0 0 10px 10px
+  border-bottom: 4px solid #acacac
+
+#home-footer-extras-wrapper
+  display: flex
+  justify-content: space-around
+  text-align: center
+
+  div
+    padding: 20px
+
+  h2
+    text-decoration: underline
+    color: #5f3c03
+
+  a
+    color: blue // had to do it explicitly because the color was appearing dull in the first column
+    padding: 10px
+    font-size: 1rem
+    display: inline-block
+
+  a:hover
+    color: #ff9700
 
 #homeFooterImageWrapper
   display: flex
@@ -35,3 +60,7 @@
 
 #twitter-icon:hover path
   fill: #1DA1F2
+
+@media (max-width: 660px)
+  #home-footer-extras-wrapper
+    flex-direction: column
