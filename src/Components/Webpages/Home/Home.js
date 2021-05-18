@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from "react"
 import Navbar from "../../Navbar/Navbar";
-import HomeIntroduction from "../../HomeIntroduction/HomeIntroduction";
 import Footer from "../../HomeFooter/HomeFooter";
 import HomeSportsAnnouncements from "../../HomeSports/HomeSportsAnnouncements";
 import firebase from "../../../firebase";
 import SliderCard from "../../SliderCard/SliderCard";
 import Slider from "react-slick";
 import {PropagateLoader as Loader} from "react-spinners";
+import './Home.sass'
 
 function Home() {
 
@@ -49,7 +49,9 @@ function Home() {
         return (
             <div>
                 <Navbar/>
-                <HomeIntroduction/>
+                <p id={'home-introduction-para'}>“The hardest skill to acquire in this sport is the one where you compete all out, give it all you have,
+                    and you are still getting beat no matter what you do. When you have the killer instinct to fight through
+                    that, it is very special.” – Eddie Reese </p>
                 {/*the events are shown here*/}
                 <Slider {...settings}>
                     {eventSlides}
