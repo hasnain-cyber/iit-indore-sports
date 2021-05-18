@@ -58,11 +58,11 @@ function Footer() {
                 <div>
                     <h2>CONTACT US</h2>
                     <div id={'contacts-internal-wrapper'}>
-                        <a href='mailto: gs.sports@iiti.ac.in' target="_blank"
+                        <a id={'footer-mail-icon'} href='mailto: gs.sports@iiti.ac.in' target="_blank"
                            rel="noreferrer">
                             <Mail/>
                         </a>
-                        <a href='tel: +917697087980' target="_blank"
+                        <a id={'footer-call-icon'} href='tel: +917697087980' target="_blank"
                            rel="noreferrer">
                             <Call/>
                         </a>
