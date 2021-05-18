@@ -1,4 +1,8 @@
-$emailColor: #754609
+@import "src/index"
+
+$emailColor: #8d1f62
+$headerColor: #0f4173
+$color-hover: #4dc662
 
 .card
   height: 480px
@@ -7,40 +11,46 @@ $emailColor: #754609
   border-radius: 5px
   padding: 10px
   position: relative
-  background: #ffd294
+  background: $color-primary
   transition: .3s
 
-.card aside
-  position: absolute
-  left: 10px
-  bottom: 0
-  width: 400px
-  transform: rotate(-90deg)
-  transform-origin: top left
-  font-family: Karantina, cursive
-  font-size: 3em
-  color: #0f476b
-  text-decoration: underline
-  letter-spacing: 2px
+  aside
+    position: absolute
+    left: 10px
+    bottom: 0
+    width: 400px
+    transform: rotate(-90deg)
+    transform-origin: top left
+    font-family: Karantina, cursive
+    font-size: 3em
+    text-decoration: underline
+    letter-spacing: 2px
 
-.card main
-  width: 250px
-  position: absolute
-  right: 10px
-  margin: auto
+  main
+    width: 250px
+    position: absolute
+    right: 10px
+    margin: auto
 
-main img
-  height: 300px
-  width: 200px
-  margin: 10px
-  border: 4px solid black
-  border-radius: 10px
+  img
+    height: 300px
+    width: 200px
+    margin: 10px
+    border: 4px solid black
+    border-radius: 10px
 
-#nameHeader
-  font-family: Karantina, cursive
-  font-size: 2.5em
-  margin: 0
-  color: #0f476b
+  aside
+    color: $headerColor
+
+  h1 // for name of person
+    font-family: Karantina, cursive
+    font-size: 2.5rem
+    margin: 0
+    color: $headerColor
+
+  a
+    color: $emailColor
+    font-family: 'Montserrat', sans-serif
 
 #cardEmailHeader
   margin-top: 30px
@@ -50,20 +60,15 @@ main img
   font-size: 2em
   color: $emailColor
 
-#cardEmailAnchor
-  text-decoration: underline $emailColor
-
 #cardEmail
-  margin-top: 0
-  font-family: 'Montserrat', sans-serif
-  color: $emailColor
+  margin-top: 5px
 
 .card:focus-within ~ .card, .card:hover ~ .card
   transform: translateX(250px)
 
 .card:hover
   transform: translateY(-10px)
-  background: #ffaf47
+  background: $color-hover
 
 .card:not(:first-child)
   margin-left: -250px

@@ -1,3 +1,5 @@
+@import "src/index"
+
 #navbarReturnWrapper
   position: relative
 
@@ -6,7 +8,7 @@
   justify-content: space-between
   padding: 2vh 4vw
   border-bottom: 4px solid black
-  background: #ffd294
+  background: $color-primary
 
 .logo
   width: 64px
@@ -20,13 +22,14 @@
   width: 120px
   height: 40px
   margin: auto auto
-  background: #F7ECDC
+  background: $color-accent
   border-radius: 5px
   transition: 0.2s
+  color: white
 
 #navbarButtonWrapper button:hover
   cursor: pointer
-  box-shadow: 5px 5px #ab6a0d
+  box-shadow: 5px 5px #1d695e
 
 #hamburgerLinks
   display: none

@@ -1,7 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Alegreya+SC&display=swap')
-
-//.slick-initialized // to prevent unnecessary horizontal scroll because of slick-track
-//  overflow-x: hidden
+@import "src/index"
 
 .slick-track
   display: flex !important // so that it takes height of the longest slide
@@ -9,7 +6,7 @@
 .slick-slide
   display: flex
   height: inherit !important // to make all slides of same height
-  background: #ffe7c4
+  background: $color-primary-tint
   margin: 2vh 0
   text-align: center
 
@@ -25,7 +22,7 @@
   font-family: 'Zen Dots', cursive
   margin: 5vh
   font-size: 2.5em
-  color: #5f3c03
+  color: $color-primary-shade
 
 #sliderCardTitle
   font-family: 'Zen Dots', cursive

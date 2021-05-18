@@ -29,7 +29,7 @@ class HomeSportsAnnouncements extends React.Component {
         const selectedIcon = document.getElementById('cricket') // initializing with cricket
         selectedIcon.style.width = '40px'
         selectedIcon.style.height = '40px'
-        selectedIcon.style.background = '#a9cec2'
+        selectedIcon.style.background = '#3ca594'
     }
 
     handleImageClick(event) {
@@ -42,7 +42,7 @@ class HomeSportsAnnouncements extends React.Component {
         selectedIcon = event.target
         selectedIcon.style.width = '40px'
         selectedIcon.style.height = '40px'
-        selectedIcon.style.background = '#a9cec2'
+        selectedIcon.style.background = '#3ca594'
 
         const announcements = []
         this.announcementsCollection.docs.forEach(doc => {

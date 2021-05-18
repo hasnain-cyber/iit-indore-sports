@@ -1,6 +1,8 @@
+@import "src/index";
+
 #hall-of-fame-slides-manager {
   text-align: center;
-  background: #ffeae0;
+  background: $color-primary-tint;
 
   .slick-slide {
     background: url("confetti.jpg") center;

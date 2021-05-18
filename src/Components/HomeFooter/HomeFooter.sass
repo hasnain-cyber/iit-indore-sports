@@ -1,7 +1,9 @@
 @import "src/index"
 
+$color-hover: #3CA594
+
 #home-footer-return-wrapper
-  background: #ffe7c4
+  background: $color-primary-tint
   padding: 20px
   border-top: 4px solid black
   border-radius: 0 0 10px 10px
@@ -19,7 +21,7 @@
 
   h2
     text-decoration: underline
-    color: #5f3c03
+    color: $color-primary-shade
 
   a
     color: blue // had to do it explicitly because the color was appearing dull in the first column
@@ -28,7 +30,7 @@
     display: inline-block
 
   a:hover
-    color: #ff9700
+    color: $color-hover
 
   img
     width: 128px
@@ -50,7 +52,7 @@
 
   a:hover
     svg path
-      fill: #ff9700
+      fill: $color-hover
 
 #homeFooterImageWrapper
   display: flex
@@ -63,7 +65,7 @@
   cursor: pointer
 
 #up-arrow:hover path
-  fill: #ff9700
+  fill: $color-hover
 
 #facebook-icon:hover path
   fill: #4267B2
