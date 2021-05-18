@@ -3,7 +3,7 @@ import 'firebase/firestore'
 
 // noinspection SpellCheckingInspection,SpellCheckingInspection,SpellCheckingInspection,SpellCheckingInspection
 const firebaseConfig = firebase.initializeApp({
-    apiKey: "AIzaSyB2G_HyKJ7HrZKNK1R796_sWqiQPbTdixs",
+    apiKey: process.env.API_KEY,
     authDomain: "iit-indore-sports-website.firebaseapp.com",
     projectId: "iit-indore-sports-website",
     storageBucket: "iit-indore-sports-website.appspot.com",
