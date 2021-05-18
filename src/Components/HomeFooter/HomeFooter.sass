@@ -17,7 +17,7 @@
   justify-content: space-around
   text-align: center
 
-  h2
+  h1
     text-decoration: underline
     color: $color-primary-shade
 
@@ -26,28 +26,35 @@
 
 #network-internal-wrapper
   display: flex
-  justify-content: space-between
-  gap: 1vw
-  align-items: center
-
-#contacts-internal-wrapper
-  display: flex
   justify-content: center
-  gap: 1vw
+  gap: 4vw
+  align-items: center
 
   a
     svg
       color: #837D88
 
+#footer-mail-icon path
+  fill: gray
+
 #footer-mail-icon:hover path
   fill: #147eba
+
+#footer-call-icon path
+  fill: gray
 
 #footer-call-icon:hover path
   fill: #479f47
 
-#homeFooterImageWrapper
+.home-footer-image-wrapper
   display: flex
-  gap: 15px
+  justify-content: center
+  width: fit-content
+  gap: 2vw
+  padding: 1vh 1vw
+  background: radial-gradient(white, #4eaaff)
+  align-items: center
+  border-radius: 4px
 
 #up-arrow
   width: 32px
@@ -73,6 +80,3 @@
 
     img
       width: 64px
-
-  #network-internal-wrapper
-    justify-content: space-around

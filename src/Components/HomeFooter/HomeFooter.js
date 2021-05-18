@@ -17,7 +17,7 @@ function Footer() {
                     <path fill="#000000"
                           d="M369.227 283.365l-99.148-99.148c-7.734-7.694-20.226-7.694-27.96 0l-99.148 99.148c-6.365 7.416-6.365 18.382 0 25.798 7.119 8.309 19.651 9.28 27.96 2.161L256 226.256l85.267 85.069c7.734 7.694 20.226 7.694 27.96 0 7.694-7.734 7.694-20.227 0-27.96z"/>
                 </svg>
-                <div id={'homeFooterImageWrapper'}>
+                <div className={'home-footer-image-wrapper'}>
 
                     <a href="https://www.facebook.com/iitisports" target="_blank" rel="noreferrer">
                         <svg width="24" height="24" id='facebook-icon'>
@@ -42,7 +42,7 @@ function Footer() {
             </div>
             <div id="home-footer-extras-wrapper">
                 <div>
-                    <h2>OUR NETWORK</h2>
+                    <h1>OUR NETWORK</h1>
                     <div id="network-internal-wrapper">
                         <a href='http://gymkhana.iiti.ac.in' target="_blank" rel="noreferrer">
                             <img src={'gymkhana-logo.png'} alt={'gymkhana-icon'}/>
@@ -56,8 +56,8 @@ function Footer() {
                     </div>
                 </div>
                 <div>
-                    <h2>CONTACT US</h2>
-                    <div id={'contacts-internal-wrapper'}>
+                    <h1>CONTACT US</h1>
+                    <div className={'home-footer-image-wrapper'} style={{margin: "0 auto"}}>
                         <a id={'footer-mail-icon'} href='mailto: gs.sports@iiti.ac.in' target="_blank"
                            rel="noreferrer">
                             <Mail/>
