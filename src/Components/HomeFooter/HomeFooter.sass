@@ -17,9 +17,6 @@
   justify-content: space-around
   text-align: center
 
-  div
-    padding: 20px
-
   h2
     text-decoration: underline
     color: #5f3c03
@@ -33,15 +30,31 @@
   a:hover
     color: #ff9700
 
+  img
+    width: 128px
+
+#network-internal-wrapper
+  display: flex
+  justify-content: space-between
+  gap: 1vw
+  align-items: center
+
+#contacts-internal-wrapper
+  display: flex
+  justify-content: center
+  gap: 1vw
+
+  a
+    svg
+      color: #837D88
+
+  a:hover
+    svg path
+      fill: #ff9700
+
 #homeFooterImageWrapper
   display: flex
   gap: 15px
-
-#homeFooterImageWrapper svg
-  display: inline-block
-
-#homeFooterReturnWrapper svg:hover
-  cursor: pointer
 
 #up-arrow
   width: 32px
@@ -64,3 +77,9 @@
 @media (max-width: 660px)
   #home-footer-extras-wrapper
     flex-direction: column
+
+    img
+      width: 64px
+
+  #network-internal-wrapper
+    justify-content: space-around

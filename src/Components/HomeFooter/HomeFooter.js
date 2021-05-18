@@ -1,5 +1,6 @@
 import React from 'react'
 import './HomeFooter.sass'
+import {Call, Mail} from "@material-ui/icons";
 
 function Footer() {
 
@@ -42,19 +43,30 @@ function Footer() {
             <div id="home-footer-extras-wrapper">
                 <div>
                     <h2>OUR NETWORK</h2>
-                    <text>Gymkhana:<a href='http://gymkhana.iiti.ac.in' target="_blank"
-                                      rel="noreferrer">http://gymkhana.iiti.ac.in/</a></text>
-                    <br/>
-                    <text>Debsoc:<a href='http://gymkhana.iiti.ac.in' target="_blank"
-                                    rel="noreferrer">http://gymkhana.iiti.ac.in/</a></text>
-                    <br/>
-                    <text>MUN:<a href='http://mun.iiti.ac.in' target="_blank"
-                                 rel="noreferrer">http://mun.iiti.ac.in</a></text>
+                    <div id="network-internal-wrapper">
+                        <a href='http://gymkhana.iiti.ac.in' target="_blank" rel="noreferrer">
+                            <img src={'gymkhana-logo.png'} alt={'gymkhana-icon'}/>
+                        </a>
+                        <a href='http://debsoc.iiti.ac.in' target="_blank" rel="noreferrer">
+                            <img src={'debsoc-logo.png'} alt={'debsoc-icon'}/>
+                        </a>
+                        <a href='http://mun.iiti.ac.in' target="_blank" rel="noreferrer">
+                            <img src={'mun-logo.png'} alt={'mun-icon'}/>
+                        </a>
+                    </div>
                 </div>
                 <div>
                     <h2>CONTACT US</h2>
-                    <text>Email:<a href='mailto: gs.sports@iiti.ac.in' target="_blank"
-                                   rel="noreferrer">gs.sports@iiti.ac.in</a></text>
+                    <div id={'contacts-internal-wrapper'}>
+                        <a href='mailto: gs.sports@iiti.ac.in' target="_blank"
+                           rel="noreferrer">
+                            <Mail/>
+                        </a>
+                        <a href='tel: +917697087980' target="_blank"
+                           rel="noreferrer">
+                            <Call/>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
