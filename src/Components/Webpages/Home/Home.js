@@ -28,9 +28,7 @@ function Home() {
 
             const eventCollection = await firestore.collection('events').get()
             setEventSlides(eventCollection.docs.map(doc => {
-                const docData = doc.data()
-                return (<SliderCard key={doc.id} imageUrl={docData.imageUrl} title={docData.title}
-                                    description={docData.description} heading={'EVENTS'}/>)
+                return (<SliderCard key={doc.id} data={doc.data()} heading={'EVENTS'}/>)
             }))
 
             setAnnouncementCollection(await firestore.collection('announcements').get())
@@ -49,9 +47,14 @@ function Home() {
         return (
             <div>
                 <Navbar/>
-                <p id={'home-introduction-para'}>“The hardest skill to acquire in this sport is the one where you compete all out, give it all you have,
-                    and you are still getting beat no matter what you do. When you have the killer instinct to fight through
-                    that, it is very special.” – Eddie Reese </p>
+                <div id={'home-introduction-wrapper'}>
+                    <h1>IIT INDORE SPORTS</h1>
+                    <p>“The hardest skill to acquire in this sport is the one where you
+                        compete all out, give it all you have,
+                        and you are still getting beat no matter what you do. When you have the killer instinct to fight
+                        through
+                        that, it is very special.” – Eddie Reese </p>
+                </div>
                 {/*the events are shown here*/}
                 <Slider {...settings}>
                     {eventSlides}

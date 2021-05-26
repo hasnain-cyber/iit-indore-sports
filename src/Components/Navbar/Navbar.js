@@ -27,12 +27,9 @@ class Navbar extends React.Component {
         return (
             <div id={'navbarReturnWrapper'}>
                 <nav id="navbar">
-                    <div id="navbar-left">
                         <Link to={'/'}>
                             <img className="logo" src={'/logo.png'} alt="logo"/>
                         </Link>
-                        <h1>IIT INDORE SPORTS</h1>
-                    </div>
                     <div id={'hamburgerIconWrapper'}>
                         <Hamburger toggled={this.state.isOpen} toggle={this.handleClick}/>
                     </div>

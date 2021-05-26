@@ -62,10 +62,10 @@ function Footer() {
                            rel="noreferrer">
                             <Mail/>
                         </a>
-                        {/*<a id={'footer-call-icon'} target="_blank"*/}
-                        {/*   rel="noreferrer">*/}
+                        <a id={'footer-call-icon'} href={'void(0)'} target="_blank"
+                           rel="noreferrer">
                             <Call/>
-                        {/*</a>*/}
+                        </a>
                     </div>
                 </div>
             </div>

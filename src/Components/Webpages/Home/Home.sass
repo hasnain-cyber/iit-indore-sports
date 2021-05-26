@@ -1,16 +1,38 @@
-#home-introduction-para
-  font-family: 'Karantina', cursive
-  font-size: 3rem
-  text-align: center
-  color: white
-
-  padding: 32vh 20vw
-  margin: 0
+#home-introduction-wrapper
+  display: flex
+  flex-direction: column
+  justify-content: space-around
+  padding: 20vh 10vw
 
   background: url(homeIntroBackground.jpg) no-repeat center fixed
   background-size: cover
 
-@media (max-width: 800px)
-  #home-introduction-para
-    padding: 22vh 10vw
-    font-size: 2.5rem
+  color: white
+  text-align: center
+  font-size: 20px
+
+  h1
+    font-family: 'Zen Dots', cursive
+    font-size: 3.5em
+
+  p
+    font-family: 'Karantina', cursive
+    font-size: 2.5em
+    width: clamp(40vw, 800px, 80vw)
+    margin: 0 auto
+
+
+@media (max-width: 1200px)
+  #home-introduction-wrapper
+    font-size: 17px
+
+@media (max-width: 1000px)
+  #home-introduction-wrapper
+    font-size: 14px
+
+@media (max-width: 840px)
+  #home-introduction-wrapper
+    padding: 15vh 10vw
+
+    h1
+      font-size: 40px
