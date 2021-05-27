@@ -47,11 +47,8 @@ function Footer() {
                         <a href='http://gymkhana.iiti.ac.in' target="_blank" rel="noreferrer">
                             <img src={'gymkhana-logo.png'} alt={'gymkhana-icon'}/>
                         </a>
-                        <a href='http://debsoc.iiti.ac.in' target="_blank" rel="noreferrer">
-                            <img src={'debsoc-logo.png'} alt={'debsoc-icon'}/>
-                        </a>
-                        <a href='http://mun.iiti.ac.in' target="_blank" rel="noreferrer">
-                            <img src={'mun-logo.png'} alt={'mun-icon'}/>
+                        <a href='https://www.iiti.ac.in' target="_blank" rel="noreferrer">
+                            <img src={'logo.png'} alt={'iit-indore--icon'}/>
                         </a>
                     </div>
                 </div>
