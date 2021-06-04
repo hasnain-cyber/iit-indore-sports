@@ -28,15 +28,7 @@ function Home() {
 			setEventSlides(
 				eventCollection.docs.map((doc) => {
 					const docData = doc.data();
-					return (
-						<SliderCard
-							key={doc.id}
-							imageUrl={docData.imageUrl}
-							title={docData.title}
-							description={docData.description}
-							heading={"EVENTS"}
-						/>
-					);
+					return <SliderCard key={doc.id} data={docData} heading={"EVENTS"} />;
 				})
 			);
 

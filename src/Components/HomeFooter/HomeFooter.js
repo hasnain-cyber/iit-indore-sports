@@ -8,7 +8,7 @@ function Footer() {
 	}
 
 	return (
-		<div id={"home-footer-return-wrapper"} className="home1">
+		<div id={"home-footer-return-wrapper"}>
 			<div id={"home-footer-upper-wrapper"}>
 				<svg id={"up-arrow"} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" onClick={handleClick}>
 					<path
@@ -55,11 +55,8 @@ function Footer() {
 						<a href="http://gymkhana.iiti.ac.in" target="_blank" rel="noreferrer">
 							<img src={"gymkhana-logo.png"} alt={"gymkhana-icon"} />
 						</a>
-						<a href="http://debsoc.iiti.ac.in" target="_blank" rel="noreferrer">
-							<img src={"debsoc-logo.png"} alt={"debsoc-icon"} />
-						</a>
-						<a href="http://mun.iiti.ac.in" target="_blank" rel="noreferrer">
-							<img src={"mun-logo.png"} alt={"mun-icon"} />
+						<a href="https://www.iiti.ac.in" target="_blank" rel="noreferrer">
+							<img src={"logo.png"} alt={"iit-indore--icon"} />
 						</a>
 					</div>
 				</div>
@@ -69,10 +66,9 @@ function Footer() {
 						<a id={"footer-mail-icon"} href="mailto: gs.sports@iiti.ac.in" target="_blank" rel="noreferrer">
 							<Mail />
 						</a>
-						{/*<a id={'footer-call-icon'} target="_blank"*/}
-						{/*   rel="noreferrer">*/}
-						<Call />
-						{/*</a>*/}
+						<a id={"footer-call-icon"} href={"void(0)"} target="_blank" rel="noreferrer">
+							<Call />
+						</a>
 					</div>
 				</div>
 			</div>

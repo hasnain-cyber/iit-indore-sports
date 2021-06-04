@@ -3,7 +3,6 @@ import Slider from "react-slick";
 import SliderCard from "../../SliderCard/SliderCard";
 import firebase from "../../../firebase";
 import "./HallOfFame.scss";
-// import Navbar from "../../Navbar/Navbar";
 import { PropagateLoader as Loader } from "react-spinners";
 
 class HallOfFame extends React.Component {
@@ -28,18 +27,8 @@ class HallOfFame extends React.Component {
 		const fetchEvents = async () => {
 			const dataCollection = await firestore.collection("awardees").get();
 			dataCollection.docs.forEach((doc) => {
-				const docData = doc.data();
-				const sport = docData.sport;
-				const slideCard = (
-					<SliderCard
-						key={doc.id}
-						imageUrl={docData.imageUrl}
-						title={docData.title}
-						description={docData.description}
-						heading={sport}
-					/>
-				);
-
+				const sport = doc.data().sport;
+				const slideCard = <SliderCard key={doc.id} data={doc.data()} />;
 				if (sport === "cricket") this.setState({ cricketSlides: this.state.cricketSlides.concat(slideCard) });
 				else if (sport === "football")
 					this.setState({ footballSlides: this.state.footballSlides.concat(slideCard) });
