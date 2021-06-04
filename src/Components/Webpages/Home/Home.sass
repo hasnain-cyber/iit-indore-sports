@@ -3,14 +3,16 @@
   font-size: 3rem
   text-align: center
   color: white
-
-  padding: 32vh 20vw
+  min-height: 70vh
+  padding: 100px 20vw
   margin: 0
 
-  background: url(homeIntroBackground.jpg) no-repeat center fixed
+  background-image: linear-gradient( rgba(0,0,0,.7), rgba(0,0,0,.7) ), url(homeIntroBackground.jpg)
+  background-attachment: fixed
   background-size: cover
 
 @media (max-width: 800px)
   #home-introduction-para
-    padding: 22vh 10vw
+    padding: 30px 10vw
     font-size: 2.5rem
+    min-height: 80vh
