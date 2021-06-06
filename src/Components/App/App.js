@@ -5,6 +5,7 @@ import Council from "../Webpages/Council/Council";
 import HallOfFame from "../Webpages/HallOfFame/HallOfFame";
 import Explore from "../Webpages/Explore/Explore";
 import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
 
 function App() {
 	return (
@@ -16,6 +17,7 @@ function App() {
 				<Route path={"/hallOfFame"} exact component={HallOfFame} />
 				<Route path={"/explore"} exact component={Explore} />
 			</Switch>
+			<Footer/>
 		</Router>
 	);
 }

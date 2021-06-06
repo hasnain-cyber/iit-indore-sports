@@ -1,5 +1,5 @@
 import React from "react";
-import "./HomeFooter.sass";
+import "./Footer.sass";
 import { Call, Mail } from "@material-ui/icons";
 
 function Footer() {

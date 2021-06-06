@@ -21,27 +21,25 @@ export default function Navbar() {
 	};
 
 	const [showNav, setShowNav] = useState(true);
-	var scrollPosition = 0;
-
-	const handleScroll = () => {
-		const position = window.pageYOffset;
-		console.log("yo", position);
-		console.log(scrollPosition);
-		if (position > scrollPosition) {
-			setShowNav(false);
-			setIsOpen(false);
-		} else {
-			setShowNav(true);
-		}
-		scrollPosition = position;
-	};
+	let [scrollPosition, setScrollPosition] = useState(0);
 
 	useEffect(() => {
+		const handleScroll = () => {
+			const position = window.pageYOffset;
+			if (position > scrollPosition) {
+				setShowNav(false);
+				setIsOpen(false);
+			} else {
+				setShowNav(true);
+			}
+			setScrollPosition(position)
+		};
+
 		window.addEventListener("scroll", handleScroll, { passive: true });
 		return () => {
 			window.removeEventListener("scroll", handleScroll);
 		};
-	}, []);
+	}, [scrollPosition]);
 
 	return (
 		<div id={"navbarReturnWrapper"} className={showNav ? "myNavbar showNav" : "myNavbar hideNav"}>
