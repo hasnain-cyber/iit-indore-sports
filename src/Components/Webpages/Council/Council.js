@@ -6,9 +6,9 @@ function Council(props) {
         <div>
             <div id="councilReturnWrapper">
                 <h1 className="councilHeader">STAFF MEMBERS</h1>
-                <div className={"cardHandlerReturnWrapper"}>{props.staffCards}</div>
+                <div className={"staff-cards-return-wrapper"}>{props.staffCards}</div>
                 <h1 className="councilHeader">CAPTAINS</h1>
-                <div className={"cardHandlerReturnWrapper"}>{props.captainsCards}</div>
+                <div className={"captains-cards-return-wrapper"}>{props.captainsCards}</div>
             </div>
         </div>
     );

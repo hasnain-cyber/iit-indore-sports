@@ -1,9 +1,8 @@
 @import "src/index"
 
 $emailColor: #8d1f62
-$color-hover: #1ad24a
 
-.card
+.staff-card, .captain-card
   height: 480px
   min-width: 300px
   border: 2px solid black
@@ -11,7 +10,6 @@ $color-hover: #1ad24a
   padding: 10px
   position: relative
   background: $color-primary
-  transition: .3s
 
   aside
     position: absolute
@@ -61,13 +59,3 @@ $color-hover: #1ad24a
 
 #cardEmail
   margin-top: 5px
-
-.card:focus-within ~ .card, .card:hover ~ .card
-  transform: translateX(250px)
-
-.card:hover
-  transform: translateY(-20px)
-  background: $color-hover
-
-.card:not(:first-child)
-  margin-left: -250px

@@ -1,0 +1,17 @@
+@import "src/index"
+
+$emailColor: #8d1f62
+$color-hover: #1ad24a
+
+.captain-card
+  transition: .3s
+
+.captain-card:focus-within ~ .captain-card, .captain-card:hover ~ .captain-card
+  transform: translateX(250px)
+
+.captain-card:hover
+  transform: translateY(-20px)
+  background: $color-hover
+
+.captain-card:not(:first-child)
+  margin-left: -250px

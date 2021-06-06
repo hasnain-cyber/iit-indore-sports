@@ -1,9 +1,9 @@
 import React from 'react'
-import './CouncilCard.sass'
+import './CouncilCaptainCard.sass'
 
-function CouncilCard(props) {
+function CouncilCaptainCard(props) {
     return (
-        <article className="card">
+        <article className="captain-card">
             <aside>{props.position.toUpperCase()}</aside>
             <main>
                 <img id={'cardImage'} src={props.image} alt=''/>
@@ -17,4 +17,4 @@ function CouncilCard(props) {
     )
 }
 
-export default CouncilCard
+export default CouncilCaptainCard

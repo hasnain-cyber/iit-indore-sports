@@ -1,19 +1,15 @@
 @import "src/index";
 
-#hall-of-fame-slides-manager {
+#hall-of-fame-return-wrapper {
   text-align: center;
   background: $color-primary-tint;
+  margin: -20px;
+  padding: 5vh 0;
+}
 
-  .slick-slide {
-    background: url("confetti.jpg") center;
-    background-size: cover;
-  }
-
-  h1,p {
-    color: white;
-  }
-
-  img {
-    border: 2px solid white;
-  }
+.hall-of-fame-section {
+  display: grid;
+  gap: 2vw;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
 }

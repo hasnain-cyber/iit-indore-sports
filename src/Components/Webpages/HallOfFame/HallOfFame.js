@@ -1,84 +1,120 @@
 import React from "react";
-import Slider from "react-slick";
-import SliderCard from "../../SliderCard/SliderCard";
-import firebase from "../../../firebase";
 import "./HallOfFame.scss";
-import { PropagateLoader as Loader } from "react-spinners";
+import HallOfFameCard from "../../HallOfFameCard/HallOfFameCard";
 
 class HallOfFame extends React.Component {
-	constructor(props) {
-		super(props);
+    constructor(props) {
+        super(props)
 
-		this.state = {
-			loading: true,
+        this.state = {
+            cricketSlides: [],
+            footballSlides: [],
+            basketballSlides: [],
+            badmintonSlides: [],
+            athleticsSlides: [],
+            ttSlides: [],
+            tennisSlides: [],
+            volleyballSlides: [],
+            chessSlides: [],
+        }
 
-			cricketSlides: [],
-			footballSlides: [],
-			basketballSlides: [],
-			badmintonSlides: [],
-			athleticsSlides: [],
-			ttSlides: [],
-			tennisSlides: [],
-			volleyballSlides: [],
-			chessSlides: [],
-		};
+        this.settings = {
+            arrows: true,
+            fade: true,
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+        }
+    }
 
-		const firestore = firebase.firestore();
-		const fetchEvents = async () => {
-			const dataCollection = await firestore.collection("awardees").get();
-			dataCollection.docs.forEach((doc) => {
-				const sport = doc.data().sport;
-				const slideCard = <SliderCard key={doc.id} data={doc.data()} />;
-				if (sport === "cricket") this.setState({ cricketSlides: this.state.cricketSlides.concat(slideCard) });
-				else if (sport === "football")
-					this.setState({ footballSlides: this.state.footballSlides.concat(slideCard) });
-				else if (sport === "basketball")
-					this.setState({ basketballSlides: this.state.basketballSlides.concat(slideCard) });
-				else if (sport === "badminton")
-					this.setState({ badmintonSlides: this.state.badmintonSlides.concat(slideCard) });
-				else if (sport === "athletics")
-					this.setState({ athleticsSlides: this.state.athleticsSlides.concat(slideCard) });
-				else if (sport === "table tennis") this.setState({ ttSlides: this.state.ttSlides.concat(slideCard) });
-				else if (sport === "tennis") this.setState({ tennisSlides: this.state.tennisSlides.concat(slideCard) });
-				else if (sport === "volleyball")
-					this.setState({ volleyballSlides: this.state.volleyballSlides.concat(slideCard) });
-				else if (sport === "chess") this.setState({ chessSlides: this.state.chessSlides.concat(slideCard) });
-			});
-		};
-		fetchEvents()
-			.then(() => this.setState({ loading: false }))
-			.catch((err) => console.log(err));
+    componentDidMount() {
+        const dataCollection = this.props.hallOfFameCollection
+        const cricketCards = []
+        const footballCards = []
+        const basketballCards = []
+        const badmintonCards = []
+        const athleticsCards = []
+        const ttCards = []
+        const tennisCards = []
+        const volleyballCards = []
+        const chessCards = []
 
-		this.settings = {
-			arrows: true,
-			fade: true,
-			infinite: true,
-			slidesToShow: 1,
-			slidesToScroll: 1,
-		};
-	}
+        dataCollection.docs.forEach((doc) => {
+            const sport = doc.data().sport
+            const slideCard = <HallOfFameCard key={doc.id} data={doc.data()}/>
+            if (sport === "cricket")
+                cricketCards.push(slideCard)
+            else if (sport === "football")
+                footballCards.push(slideCard)
+            else if (sport === "basketball")
+                basketballCards.push(slideCard)
+            else if (sport === "badminton")
+                badmintonCards.push(slideCard)
+            else if (sport === "athletics")
+                athleticsCards.push(slideCard)
+            else if (sport === "table tennis")
+                ttCards.push(slideCard)
+            else if (sport === "tennis")
+                tennisCards.push(slideCard)
+            else if (sport === "volleyball")
+                volleyballCards.push(slideCard)
+            else if (sport === "chess")
+                chessCards.push(slideCard)
+        })
 
-	render() {
-		if (this.state.loading) {
-			return <Loader loading={true} color={"#5a5a9f"} css={{ position: "fixed", top: "50%", left: "50%" }} />;
-		} else {
-			return (
-				<div>
-					<div id={"hall-of-fame-slides-manager"}>
-						<Slider {...this.settings}>{this.state.cricketSlides}</Slider>
-						<Slider {...this.settings}>{this.state.footballSlides}</Slider>
-						<Slider {...this.settings}>{this.state.basketballSlides}</Slider>
-						<Slider {...this.settings}>{this.state.badmintonSlides}</Slider>
-						<Slider {...this.settings}>{this.state.athleticsSlides}</Slider>
-						<Slider {...this.settings}>{this.state.ttSlides}</Slider>
-						<Slider {...this.settings}>{this.state.tennisSlides}</Slider>
-						<Slider {...this.settings}>{this.state.volleyballSlides}</Slider>
-						<Slider {...this.settings}>{this.state.chessSlides}</Slider>
-					</div>
-				</div>
-			);
-		}
-	}
+        this.setState({cricketSlides: cricketCards})
+        this.setState({footballSlides: footballCards})
+        this.setState({basketballSlides: basketballCards})
+        this.setState({badmintonSlides: badmintonCards})
+        this.setState({athleticsSlides: athleticsCards})
+        this.setState({ttSlides: ttCards})
+        this.setState({tennisSlides: tennisCards})
+        this.setState({volleyballSlides: volleyballCards})
+        this.setState({chessSlides: chessCards})
+    }
+
+    render() {
+        return (
+            <div id={"hall-of-fame-return-wrapper"}>
+                <h1>CRICKET</h1>
+                <div className="hall-of-fame-section">
+                    {this.state.cricketSlides}
+                </div>
+                <h1>FOOTBALL</h1>
+                <div className="hall-of-fame-section">
+                    {this.state.footballSlides}
+                </div>
+                <h1>BASKETBALL</h1>
+                <div className="hall-of-fame-section">
+                    {this.state.basketballSlides}
+                </div>
+                <h1>BADMINTON</h1>
+                <div className="hall-of-fame-section">
+                    {this.state.badmintonSlides}
+                </div>
+                <h1>ATHLETICS</h1>
+                <div className="hall-of-fame-section">
+                    {this.state.athleticsSlides}
+                </div>
+                <h1>TABLE TENNIS</h1>
+                <div className="hall-of-fame-section">
+                    {this.state.ttSlides}
+                </div>
+                <h1>TENNIS</h1>
+                <div className="hall-of-fame-section">
+                    {this.state.tennisSlides}
+                </div>
+                <h1>VOLLEYBALL</h1>
+                <div className="hall-of-fame-section">
+                    {this.state.volleyballSlides}
+                </div>
+                <h1>CHESS</h1>
+                <div className="hall-of-fame-section">
+                    {this.state.chessSlides}
+                </div>
+            </div>
+        )
+    }
 }
 
-export default HallOfFame;
+export default HallOfFame
